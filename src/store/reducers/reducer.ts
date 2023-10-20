@@ -1,6 +1,6 @@
-import { combineReducers } from "@reduxjs/toolkit";
+import { combineReducers } from "redux";
 import { todoSlice } from "../slices/todoSlice";
 
 export const mainReducer = combineReducers({
-    todos: todoSlice.reducer,
+    tasks: todoSlice.reducer,
 })

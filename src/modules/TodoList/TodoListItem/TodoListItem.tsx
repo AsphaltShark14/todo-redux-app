@@ -1,12 +1,14 @@
-import { useDispatch } from "react-redux";
 import { useState } from "react";
-import "./TodoListItem.scss";
-import { Task } from "../../../utils/types";
-import { removeTask, updateTask } from "../../../store/slices/todoSlice";
-import { TaskForm } from "../../TaskForm/TaskForm";
-import { EditIcon } from "../../../icons/EditIcon";
+import { useDispatch } from "react-redux";
 import { Button } from "../../../components/Button/Button";
+import { Checkbox } from "../../../components/Checkbox/Checkbox";
+import { AcceptIcon } from "../../../icons/AcceptIcon";
 import { DeleteIcon } from "../../../icons/DeleteIcon";
+import { EditIcon } from "../../../icons/EditIcon";
+import { removeTask, updateTask } from "../../../store/slices/todoSlice";
+import { Task } from "../../../utils/types";
+import { TaskForm } from "../../TaskForm/TaskForm";
+import "./TodoListItem.scss";
 
 type Props = {
   task: Task;
@@ -20,12 +22,12 @@ export const TodoListItem = ({ task }: Props) => {
     dispatch(removeTask({ id: task.id }));
   };
 
-  const handleEdit = (data: string) => {
+  const handleEdit = (value: string) => {
     dispatch(
       updateTask({
         id: task.id,
         status: task.status,
-        task: data,
+        text: value,
       })
     );
     setIsEditing(false);
@@ -43,29 +45,31 @@ export const TodoListItem = ({ task }: Props) => {
 
   return (
     <div className="container">
-          {isEditing ? (
-              <div className="container__task">
-                  <TaskForm
-                      onFormSubmit={handleEdit}
-                      defaultValue={task.text}
-                      icon={<EditIcon />}
-                  />
-              </div>
-          ) : null}
-          {!isEditing ? (
-        <div className="container__task">
-          <p className={`container__text container__text--${task.status}`}>
-            {task.text}
-          </p>
-          <div className="container__actions">
-            <input
-              className="container__checkbox"
+      {isEditing ? (
+        <div className="container-item">
+          <TaskForm
+            onFormSubmit={handleEdit}
+            defaultValue={task.text}
+            icon={<AcceptIcon />}
+            isEdit
+          />
+        </div>
+      ) : null}
+      {!isEditing ? (
+        <div className="container-item">
+          <div className="container-checkbox">
+            <Checkbox
               type="checkbox"
               onChange={() => {
                 handleCheckbox();
               }}
               value={task.status === "done" ? "checked" : ""}
-            ></input>
+            />
+            <p className={`container-text container-text_${task.status}`}>
+              {task.text}
+            </p>
+          </div>
+          <div className="container-actions">
             {task.status !== "done" && (
               <Button
                 onClick={() => {
@@ -81,7 +85,7 @@ export const TodoListItem = ({ task }: Props) => {
               icon={<DeleteIcon />}
             />
           </div>
-          {task.status === "todo" && <div className={`container__mark`}></div>}
+          <div className={`container-divider`} />
         </div>
       ) : null}
     </div>

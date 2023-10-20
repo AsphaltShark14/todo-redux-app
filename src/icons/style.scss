@@ -1,0 +1,7 @@
+@import "src/styles/colors.scss";
+
+.icon {
+  &:hover {
+    background-color: $gray-100;
+  }
+}

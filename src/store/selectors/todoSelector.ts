@@ -1,5 +1,5 @@
 import { createSelector } from "@reduxjs/toolkit";
-import { Task, Todo } from "../../utils/types";
+import { Todo } from "../../utils/types";
 
 const todoList = (state: Todo) => state.tasks;
 

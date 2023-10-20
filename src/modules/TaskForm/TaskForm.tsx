@@ -1,17 +1,23 @@
 import { FormEvent, useState } from "react";
-import "./TaskForm.scss";
-import { Input } from "../../components/Input/Input";
 import { Button } from "../../components/Button/Button";
+import { Input } from "../../components/Input/Input";
+import "./TaskForm.scss";
 
 type Props = {
   onFormSubmit: (data: string) => void;
   defaultValue?: string;
   icon: React.ReactNode;
+  isEdit?: boolean;
 };
 
 const TASK_ID = "task";
 
-export const TaskForm = ({ onFormSubmit, defaultValue, icon }: Props) => {
+export const TaskForm = ({
+  onFormSubmit,
+  defaultValue,
+  icon,
+  isEdit = false,
+}: Props) => {
   const [isValid, setIsValid] = useState(false);
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -39,7 +45,7 @@ export const TaskForm = ({ onFormSubmit, defaultValue, icon }: Props) => {
       <Input
         id={TASK_ID}
         name={TASK_ID}
-        placeholder="Add a new task"
+        placeholder={isEdit ? "" : "Add a new task"}
         defaultValue={defaultValue}
       />
       <Button
