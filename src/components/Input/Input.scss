@@ -1,18 +1,22 @@
 @import "/src/styles/colors.scss";
 
 .input {
-    background-color: $tertiary-color;
-    border: none;
-    border-radius: 5px;
+    border: 1px solid $tertiary-color;
+    border-radius: 0.5rem;
     width: 25vw;
     width: 25dvw;
     height: 5vh;
     height: 5dvh;
-    color: $white;
+    color: $gray;
     align-items: center;
     padding-left: 15px;
+    margin-right: 10px;
     font-size: 1.12rem;
     position: relative;
+
+    &:focus {
+        border: 2px solid $primary-color;
+    }
 
     @media screen and (max-width: 500px) {
         width: 50vw;
