@@ -38,7 +38,12 @@ export const TaskForm = ({
   };
 
   return (
-    <form className="addForm" onSubmit={onSubmit} onChange={isFormValid}>
+    <form
+      className="addForm"
+      onSubmit={onSubmit}
+      onChange={isFormValid}
+      data-testid="task-form-component"
+    >
       <label htmlFor={TASK_ID} className="hiddenLabel">
         Task
       </label>

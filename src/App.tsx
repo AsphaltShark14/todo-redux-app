@@ -1,13 +1,12 @@
-import React from 'react';
-import './App.css';
+import "./App.css";
+import { AddTask } from "./modules/AddTask/AddTask";
+import { TodoList } from "./modules/TodoList/TodoList";
 import "./styles.scss";
-import { AddTask } from './modules/AddTask/AddTask';
-import { TodoList } from './modules/TodoList/TodoList';
 
 function App() {
   return (
-    <div className="App">
-      <div className='Container'>
+    <div className="App" data-testid="app-container">
+      <div className="Container">
         <header className="AppHeader">
           <p>My to-dos</p>
         </header>
