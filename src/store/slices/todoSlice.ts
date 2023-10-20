@@ -15,7 +15,7 @@ export const todoSlice = createSlice({
     },
     updateTask: (state, action) => {
       const task = state.find((task) => task.id === action.payload.id);
-      console.log({ state, action });
+
       if (!task) {
         return;
       }

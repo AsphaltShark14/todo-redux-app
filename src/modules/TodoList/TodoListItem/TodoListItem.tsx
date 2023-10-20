@@ -46,13 +46,14 @@ export const TodoListItem = ({ task }: Props) => {
   return (
     <div className="container">
       {isEditing ? (
-        <div className="container-item">
+        <div className="container-item container-edit">
           <TaskForm
             onFormSubmit={handleEdit}
             defaultValue={task.text}
             icon={<AcceptIcon />}
             isEdit
           />
+          <div className={`container-divider`} />
         </div>
       ) : null}
       {!isEditing ? (
@@ -65,7 +66,7 @@ export const TodoListItem = ({ task }: Props) => {
               }}
               value={task.status === "done" ? "checked" : ""}
             />
-            <p className={`container-text container-text_${task.status}`}>
+            <p className={`container-text container-text-${task.status}`}>
               {task.text}
             </p>
           </div>

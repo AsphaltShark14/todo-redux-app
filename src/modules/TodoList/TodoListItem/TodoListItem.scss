@@ -1,32 +1,38 @@
-@import "/src/styles/mixins.scss";
 @import "src/styles/colors.scss";
 
 .container {
-    @include flex-center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &-item {
-        @include flex-row;
         display: flex;
+        flex-direction: row;
         align-items: center;
         justify-content: space-between;
         position: relative;
         max-height: max-content;
         width: 80%;
-        min-height: 5vh;
-        padding: 1rem;
-        margin-bottom: 0.5em;
-        color: $gray;
-        font-size: 1.2em;
+        min-height: 4vh;
+        min-height: 4dvh;
+        padding: 16px;
+        margin-bottom: 8px;
+        color: $tertiary-color;
+        font-size: 19px;
         border-radius: 5px;
     }
 
+    &-edit {
+        margin-top: 11px;
+    }
+
     &-divider {
-        height: 2px;
-        width: 100%;
         position: absolute;
         bottom: 0;
         right: 0;
-        background-color: $gray;
+        height: 2px;
+        width: 100%;
+        background-color: $tertiary-color;
     }
 
     &-checkbox {
@@ -35,30 +41,32 @@
     }
 
     &-text {
+        display: block;
         max-width: 60%;
         word-wrap: break-word;
         text-align: start;
         white-space: normal;
-        display: block;
         text-wrap: wrap;
 
-        @media screen and (max-width: 800px) {
-            width: 40%;
-        }
-
-        &_done {
-            text-decoration: line-through;
-            color: $gray;
-        }
-
-        &_todo {
+        &-todo {
             text-decoration-color: transparent;
+        }
+
+        &-done {
+            text-decoration: line-through;
+            color: $tertiary-color;
+        }
+
+        @media screen and (max-width: 700px) {
+            width: 40%;
         }
     }
 
     &-actions {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
         max-width: 30%;
-        @include flex-row;
-        @include flex-center;
     }
 }

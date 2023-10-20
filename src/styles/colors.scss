@@ -1,11 +1,9 @@
+$primary-color: #0093E9;
+$secondary-color: #eee;
+$tertiary-color: #5a5a6a;
 $success-color: green;
-$error-color: #dd3346;
-$warning-color: #fcc400;
-$secondary-color: #43475a;
-$tertiary-color: #9195ad77;
+$error-color: red;
+$warning-color: yellow;
 $white: #ffffff;
 $black: #000000;
-$gray: #5a5a6a;
-$gray-100: #eee;
-$primary-color: #0093E9;
-$body-background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+$background-gradient: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);

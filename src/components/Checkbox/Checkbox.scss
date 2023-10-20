@@ -3,25 +3,26 @@
 .container_checkbox {
     display: block;
     position: relative;
+    min-height: 30px;
+    min-width: 30px;
     padding-left: 35px;
     cursor: pointer;
     font-size: 22px;
+    user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    user-select: none;
-    min-width: 30px;
-    min-height: 30px;
+ 
 
     input {
         position: absolute;
         cursor: pointer;
         left: -3px;
         top: -2px;
-        z-index: 1;
         min-height: 23px;
         min-width: 23px;
         opacity: 0;
+        z-index: 1;
     }
 }
 
@@ -33,11 +34,11 @@
     width: 25px;
     background-color: $white;
     border-radius: 50%;
-    border: 1px solid $gray;
+    border: 1px solid $tertiary-color;
 }
 
 .container_checkbox:hover input~.checkmark {
-    background-color: $gray-100;
+    background-color: $secondary-color;
 }
 
 .container_checkbox input:checked~.checkmark {
