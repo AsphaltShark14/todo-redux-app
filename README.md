@@ -3,7 +3,7 @@
 Responsive ToDo Web Application made with TypeScript, React, Redux and SCSS
 
 ## Live Demo:
-[https://varitym.github.io/to-do-redux-app/](https://glistening-khapse-596fbd.netlify.app/)
+[AsphaltShark14/todo-redux-app](https://glistening-khapse-596fbd.netlify.app/)
 
 ## Usage
 
